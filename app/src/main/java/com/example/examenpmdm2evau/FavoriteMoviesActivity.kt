@@ -10,10 +10,12 @@ class FavoriteMoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite_movies)
 
+        val movie = intent.getSerializableExtra("movie") as Movie
+
         val binding = ActivityFavoriteMoviesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.PeliculaFavoritaTexto.text = "pelicula: ${movie.gettitulo()}"
 
     }
 }
